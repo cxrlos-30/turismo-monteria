@@ -1139,38 +1139,49 @@ textarea {
 
   .top-bar{
     height:auto;
-    padding:14px 12px 18px;
+    padding:12px 10px;
     display:flex;
     flex-direction:column;
-    gap:12px;
+    gap:8px;
   }
 
   .nav-tabs{
-    flex-wrap:wrap;
-    gap:8px;
-    width:fit-content;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+
+    width:auto;
+    max-width:95%;
+
+    padding:6px 8px;
     margin:auto;
+
+    border-radius:999px;
   }
 
   .nav-tabs a{
-    padding:8px 14px;
-    font-size:12px;
+    padding:7px 9px;
+    font-size:10px;
+    white-space:nowrap;
   }
 
   .login-btn{
     position:static;
     transform:none;
-    margin:8px auto 0;
+    margin:4px auto 0;
     align-self:center;
+    height:36px;
+    font-size:13px;
   }
 
   .titulo-principal,
-.hero,
-.lugares-hero,
-.page-header,
-section:first-of-type{
-  padding-top:170px !important;
-  margin-top:0 !important;
-}
+  .hero,
+  .lugares-hero,
+  .page-header,
+  section:first-of-type{
+    padding-top:145px !important;
+    margin-top:0 !important;
+  }
 
 }
