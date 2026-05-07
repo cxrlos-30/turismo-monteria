@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Guías</title>
+  <link rel="stylesheet" href="estilos.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+  
+  <div class="top-bar">
+    <div class="menu">
+      <button class="menu-btn">Menú</button>
+      <div class="menu-items">
+        <a href="index.html">Inicio</a>
+        <a href="lugares.html">Lugares</a>
+        <a href="hoteles.html">Hoteles</a>
+        <a href="guias.html">Guías</a>
+      </div>
+    </div>
+    <a href="#" class="login-btn" onclick="verPerfil()">👤</a>
+  </div>
+
+  
+  <section class="page-header">
+    <h1>Guías turísticos</h1>
+    <p>Explora con expertos locales</p>
+  </section>
+
+  
+  <section>
+    <div class="grid" id="lista-guias"></div>
+  </section>
+
+  
+  <div class="cta-guia">
+    <a href="registro-guia.html" class="btn-pro">Quiero ser guía</a>
+  </div>
+
+  <div id="modalGuia" class="modal-guia oculto">
+
+  <div class="modal-contenido">
+
+    <span class="cerrar-modal" onclick="cerrarModalGuia()">×</span>
+
+    <img id="modalImagen">
+
+    <h2 id="modalNombre"></h2>
+
+    <h4 id="modalEspecialidad"></h4>
+
+    <p id="modalDescripcion"></p>
+
+  </div>
+
+</div>
+  
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase.js"></script>
+<script src="sesion.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

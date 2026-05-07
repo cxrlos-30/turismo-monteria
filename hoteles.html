@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Hoteles</title>
+  <link rel="stylesheet" href="estilos.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+  
+<div class="top-bar">
+  <div class="menu">
+    <button class="menu-btn">Menú</button>
+    <div class="menu-items">
+      <a href="index.html">Inicio</a>
+      <a href="lugares.html">Lugares</a>
+      <a href="hoteles.html">Hoteles</a>
+      <a href="guias.html">Guías</a>
+    </div>
+  </div>
+  <a href="#" class="login-btn" onclick="verPerfil()">👤</a>
+</div>
+
+<section class="page-header">
+  <h1>Hoteles</h1>
+  <p>Encuentra dónde hospedarte</p>
+</section>
+
+<section>
+  
+  <div class="grid" id="lista-hoteles"></div>
+  <div class="cta-guia">
+  <button class="btn-pro" onclick="mostrarFormularioReserva()">
+    Reservar hotel
+  </button>
+</div>
+<div id="formReserva" class="form-guia oculto">
+
+  <h2>Reserva tu hotel</h2>
+
+  <select id="hotelSeleccionado">
+    <option>Selecciona un hotel</option>
+  </select>
+
+  <input type="text" id="nombreReserva" placeholder="Nombre completo">
+  <input type="email" id="correoReserva" placeholder="Correo">
+  <input type="text" id="telefonoReserva" placeholder="Teléfono">
+  <input type="date" id="ingreso">
+  <input type="date" id="salida">
+
+  <button onclick="guardarReserva()">Reservar</button>
+
+</div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase.js"></script>
+<script src="sesion.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

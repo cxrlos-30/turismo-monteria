@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Guías</title>
+  <link rel="stylesheet" href="estilos.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="login-body">
+
+<div class="login-container">
+  <div class="login-box">
+
+    <h2>Registro de Guía</h2>
+    <p>Completa tus datos para ofrecer tus servicios</p>
+    
+    <form id="formGuia">
+
+      <input type="text" placeholder="Nombre completo" id="nombre" required>
+        
+      <input type="email" placeholder="Correo electrónico" id="correo" required>
+
+      <input type="text" placeholder="Teléfono" id="telefono" required>
+
+      <input type="text" placeholder="Especialidad (ej: tours, naturaleza)" id="especialidad" required>
+
+      <textarea placeholder="Descripción de tu experiencia" id="descripcion"></textarea>
+
+      <button type="submit">Registrarme</button>
+
+    </form>
+
+    <a href="index.html" class="volver">← Volver</a>
+
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase.js"></script>
+<script src="registro-guia.js"></script>
+<script src="sesion.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

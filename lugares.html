@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lugares turísticos</title>
+  <link rel="stylesheet" href="estilos.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<div class="top-bar">
+  <div class="menu">
+    <button class="menu-btn">Menú</button>
+    <div class="menu-items">
+      <a href="index.html">Inicio</a>
+      <a href="lugares.html">Lugares</a>
+      <a href="hoteles.html">Hoteles</a>
+      <a href="guias.html">Guías</a>
+    </div>
+  </div>
+  <a href="#" class="login-btn" onclick="verPerfil()">👤</a>
+</div>
+
+<section class="lugares-hero">
+  <div class="lugares-overlay">
+    <span>DESTINOS DESTACADOS</span>
+    <h1>Lugares turísticos</h1>
+    <p>Explora los rincones más emblemáticos de Montería</p>
+  </div>
+</section>
+
+<section class="lugares-section">
+  <div class="grid" id="lista-lugares"></div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase.js"></script>
+<script src="sesion.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

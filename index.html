@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Turismo Montería</title>
+<link rel="stylesheet" href="estilos.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    
+<div class="top-bar">
+
+  <div class="menu">
+    <button class="menu-btn">Menú</button>
+
+    <div class="menu-items">
+      <a href="index.html">Inicio</a>
+      <a href="lugares.html">Lugares</a>
+      <a href="hoteles.html">Hoteles</a>
+      <a href="guias.html">Guías</a>
+    </div>
+  </div>
+
+ <a href="#" class="login-btn" onclick="verPerfil()">👤</a>
+
+</div>
+
+<header class="titulo-principal">
+  <span>✦ EXPERIENCIA CARIBE ✦</span>
+  <h1>MONTERÍA</h1>
+  <p>Donde el río, la cultura y la tradición crean experiencias inolvidables</p>
+</header>
+
+
+<section class="hero">
+  <div class="overlay">
+    <span class="subtitulo">La Perla del Sinú</span>
+    <h2>Vive la magia de Montería</h2>
+    <p>
+      Naturaleza, cultura, gastronomía y experiencias únicas
+      en el corazón del Caribe colombiano
+    </p>
+
+    <div class="hero-buttons">
+      <a href="lugares.html" class="btn">Explorar</a>
+      <a href="guias.html" class="btn-sec">Ver guías</a>
+    </div>
+  </div>
+</section>
+
+<section class="lugares">
+  <h2>Lugares turísticos</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <img src="img/ronda.jpg" alt="Ronda del Sinú">
+      <div class="card-content">
+        <h3>Ronda del Sinú</h3>
+        <p>Un espacio natural icónico para caminar y disfrutar del río Sinú.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="img/central.jpg" alt="Parque Central">
+      <div class="card-content">
+        <h3>Parque Central</h3>
+        <p>El corazón de Montería, rodeado de historia y cultura local.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="img/plaza.jpg" alt="Plaza Cultural">
+      <div class="card-content">
+        <h3>Plaza Cultural</h3>
+        <p>Un punto de encuentro para eventos artísticos y tradiciones monterianas.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+function toggleMenu() {
+  document.getElementById("menuItems").classList.toggle("show");
+}
+</script>
+
+<section class="blog">
+  <div class="blog-header">
+    <h2>Blog de Montería</h2>
+    <p>Conoce más sobre cultura, gastronomía y naturaleza</p>
+  </div>
+
+  <div class="blog-grid">
+
+    <div class="blog-card">
+      <img src="img/blog1.jpg" alt="Montería cultura">
+      <div class="blog-content">
+        <h3>La cultura sinuana</h3>
+        <p>
+          Montería es reconocida por su riqueza cultural, tradiciones ganaderas,
+          música vallenata y la calidez de su gente.
+        </p>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <img src="img/ronda.jpg" alt="Ronda del Sinú">
+      <div class="blog-content">
+        <h3>La emblemática Ronda del Sinú</h3>
+        <p>
+          Uno de los lugares más visitados de la ciudad, ideal para caminar,
+          disfrutar del río y conectar con la naturaleza.
+        </p>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <img src="img/blog4.jpg" alt="Gastronomía">
+      <div class="blog-content">
+        <h3>Sabores de Montería</h3>
+        <p>
+          Prueba delicias típicas como el queso costeño, bollo limpio,
+          mote de queso y pescados frescos del río Sinú.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase.js"></script>
+<script src="sesion.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
