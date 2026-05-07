@@ -794,18 +794,6 @@ textarea {
   transform: translateX(-50%) scale(1.08);
 }
 
-/* SOLO PARA HOTELES */
-
-#lista-hoteles .card h3{
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  text-align: center;
-  z-index: 3;
-}
-
 .card .btn-pro:hover{
   background: linear-gradient(135deg, #e68900, #ff9800);
 }
@@ -847,23 +835,6 @@ textarea {
   margin:0;
 }
 
-/* ARREGLO BOTON RESERVAR HOTELES */
-
-#lista-hoteles .card h3{
-  bottom: 75px !important;
-}
-
-#lista-hoteles .reservar-btn{
-  position:absolute;
-  bottom:65px;
-  left:50%;
-  transform:translateX(-50%);
-  z-index:4;
-}
-
-#lista-hoteles .reservar-btn:hover{
-  transform:translateX(-50%) scale(1.08);
-}
 
 /* BOTON VER UBICACION */
 
@@ -895,6 +866,12 @@ textarea {
 
 #lista-hoteles .mapa-btn{
   bottom:15px;
+  width:170px;
+  height:46px;
+  white-space:nowrap;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 /* AJUSTE TITULOS CON BOTONES */
@@ -1221,3 +1198,4 @@ textarea {
   }
 
 }
+
