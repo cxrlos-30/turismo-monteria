@@ -1086,7 +1086,8 @@ textarea {
   color:white;
 
   height:44px;
-  padding:0 20px;
+  width:44px;
+padding:0;
 
   border-radius:999px;
 
@@ -1105,6 +1106,10 @@ textarea {
 
 .login-btn:hover{
   background:#e68900;
+}
+
+.login-btn i{
+  font-size:16px;
 }
 
 .nav-tabs{
@@ -1152,45 +1157,43 @@ textarea {
 @media (max-width:768px){
 
   .top-bar{
-    height:auto;
-    padding:12px 10px;
+    height:70px;
+    padding:0 14px;
+
     display:flex;
-    flex-direction:column;
-    gap:8px;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
   }
 
   .nav-tabs{
     display:flex;
-    justify-content:center;
+    justify-content:flex-start;
     align-items:center;
-    gap:5px;
+    gap:4px;
 
     width:auto;
-    max-width:95%;
+    max-width:84%;
 
     padding:6px 8px;
-    margin:auto;
-
-    border-radius:999px;
+    margin:0;
   }
 
   .nav-tabs a{
-  font-family:'Poppins', sans-serif !important;
-  font-size:10px !important;
-  font-weight:600 !important;
-  line-height:1 !important;
-
-  padding:7px 9px;
-  white-space:nowrap;
-}
+    padding:7px 8px;
+    font-size:10px;
+    white-space:nowrap;
+  }
 
   .login-btn{
     position:static;
     transform:none;
-    margin:4px auto 0;
-    align-self:center;
+    margin:0;
+
     height:36px;
-    font-size:13px;
+    width:36px;
+padding:0;
+    font-size:11px;
   }
 
   .titulo-principal,
@@ -1198,8 +1201,17 @@ textarea {
   .lugares-hero,
   .page-header,
   section:first-of-type{
-    padding-top:145px !important;
+    padding-top:95px !important;
     margin-top:0 !important;
+  }
+
+  .login-btn:hover{
+    transform:scale(1.04);
+  }
+
+
+  .login-btn i{
+    font-size:14px;
   }
 
 }
