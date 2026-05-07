@@ -1111,3 +1111,43 @@ textarea {
   display:none !important;
 }
 
+.fecha-label{
+  display:block;
+  text-align:center;
+
+  margin-top:8px;
+  margin-bottom:10px;
+
+  font-weight:600;
+  color:#222;
+  font-size:16px;
+}
+
+#ingreso,
+#salida{
+  width:100%;
+  max-width:540px;
+  height:60px;
+
+  display:block;
+  margin:0 auto 20px auto;
+
+  padding:0 20px;
+
+  border:1px solid #ddd;
+  border-radius:18px;
+
+  background:white;
+
+  font-size:16px;
+  color:#444;
+
+  box-sizing:border-box;
+
+  appearance:none;
+  -webkit-appearance:none;
+}
+
+#formReserva input{
+  margin-bottom:20px;
+}
