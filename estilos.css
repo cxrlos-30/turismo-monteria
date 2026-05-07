@@ -1146,6 +1146,9 @@ textarea {
 
   appearance:none;
   -webkit-appearance:none;
+
+  text-align:center;
+  text-align-last:center;
 }
 
 #formReserva input{
