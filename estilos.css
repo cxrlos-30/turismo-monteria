@@ -61,23 +61,51 @@ body{
   flex-wrap:wrap;
 }
 
-.btn{
-  padding:16px 35px;
-  background:#ff9800;
-  color:white;
-  border-radius:10px;
+/* BOTONES HERO PREMIUM */
+
+.btn,
+.btn-sec{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:220px;
+  height:58px;
+  padding:0 35px;
+  border-radius:14px;
   text-decoration:none;
   font-weight:600;
   font-size:18px;
+  transition:all .3s ease;
+  box-sizing:border-box;
+  backdrop-filter:blur(10px);
+}
+
+.btn{
+  background:linear-gradient(135deg,#ff9800,#ffb74d);
+  color:white;
+  border:none;
+  box-shadow:0 10px 25px rgba(255,152,0,.35);
 }
 
 .btn-sec{
-  padding:16px 35px;
-  border:2px solid white;
+  background:rgba(255,255,255,.08);
+  border:2px solid rgba(255,255,255,.55);
   color:white;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:600;
+  box-shadow:0 10px 25px rgba(0,0,0,.18);
+}
+
+.btn:hover,
+.btn-sec:hover{
+  transform:translateY(-4px);
+}
+
+@media (max-width:768px){
+  .btn,
+  .btn-sec{
+    min-width:180px;
+    height:52px;
+    font-size:16px;
+  }
 }
 
 .btn:hover,
@@ -134,18 +162,6 @@ section{
   margin-bottom:15px;
   z-index:2;
 }
-
-
-.btn{
-  display:inline-block;
-  margin-top:15px;
-  padding:10px 20px;
-  background:orange;
-  color:white;
-  border-radius:8px;
-  text-decoration:none;
-}
-
 
 .page-header {
     margin-top: 80px;
@@ -1241,4 +1257,28 @@ textarea {
     text-align:center !important;
   }
 
+}
+
+/* ARREGLO DEFINITIVO BOTONES HERO */
+
+.hero-buttons{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.hero-buttons .btn,
+.hero-buttons .btn-sec{
+  min-width:220px !important;
+  height:58px !important;
+  margin:0 !important;
+  padding:0 35px !important;
+
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+
+  vertical-align:middle;
 }
