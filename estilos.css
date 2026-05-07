@@ -1132,7 +1132,7 @@ textarea {
   display:block;
   margin:0 auto 20px auto;
 
-  padding:0 20px;
+  padding:0;
 
   border:1px solid #ddd;
   border-radius:18px;
@@ -1144,11 +1144,21 @@ textarea {
 
   box-sizing:border-box;
 
+  text-align:center;
+
   appearance:none;
   -webkit-appearance:none;
+}
 
+#ingreso::-webkit-datetime-edit,
+#salida::-webkit-datetime-edit{
   text-align:center;
-  text-align-last:center;
+  width:100%;
+}
+
+#ingreso::-webkit-date-and-time-value,
+#salida::-webkit-date-and-time-value{
+  text-align:center;
 }
 
 #formReserva input{
