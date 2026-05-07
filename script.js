@@ -225,3 +225,26 @@ function cerrarModalGuia(){
     .classList.add("oculto");
 console.log("SCRIPT CARGADO CORRECTAMENTE");
 }
+
+let ultimoScroll = 0;
+
+window.addEventListener("scroll", () => {
+
+  const barra = document.querySelector(".top-bar");
+  const actual = window.pageYOffset;
+
+  if(!barra) return;
+
+  if(actual <= 20){
+    barra.classList.remove("ocultar");
+    return;
+  }
+
+  if(actual > ultimoScroll){
+    barra.classList.add("ocultar");
+  }else{
+    barra.classList.remove("ocultar");
+  }
+
+  ultimoScroll = actual;
+});
