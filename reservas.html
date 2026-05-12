@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mis Reservas</title>
+
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="top-bar">
+  <nav class="nav-tabs">
+   <a href="index.html">INICIO</a>
+
+
+
+    <a href="reservas.html" class="activo">RESERVAS</a>
+  </nav>
+
+  <a href="login.html" class="login-btn">
+    <i class="fa-regular fa-user"></i>
+  </a>
+<button id="themeToggle" class="theme-btn">🌙</button>
+</div>
+
+<section class="lugares-hero">
+  <div class="lugares-overlay">
+    <span>MIS VIAJES</span>
+    <h1>Reservas</h1>
+    <p>Administra tus hoteles reservados fácilmente</p>
+  </div>
+</section>
+
+<section class="reservas-section">
+  <div id="mensajeVacio" class="mensaje-vacio">
+    No hay hoteles reservados aún
+  </div>
+
+  <div id="misReservas" class="grid"></div>
+</section>
+
+<div class="modal" id="modalReserva">
+  <div class="modal-contenido">
+    <span class="cerrar" id="cerrarModalReserva">&times;</span>
+
+    <h2 id="tituloReserva" class="titulo-modal-reserva"></h2>
+    <p id="detalleIngreso"></p>
+    <p id="detalleSalida"></p>
+    <p id="detalleNombre"></p>
+    <p id="detalleCorreo"></p>
+    <p id="detalleTelefono"></p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase.js"></script>
+<script defer src="script.js"></script>
+<script>
+function toggleTheme() {
+  const body = document.body;
+  const themeBtn = document.getElementById("themeToggle");
+
+  body.classList.toggle("dark-mode");
+
+  if (body.classList.contains("dark-mode")) {
+    localStorage.setItem("theme", "dark");
+    if (themeBtn) themeBtn.textContent = "☀️";
+  } else {
+    localStorage.setItem("theme", "light");
+    if (themeBtn) themeBtn.textContent = "🌙";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const themeBtn = document.getElementById("themeToggle");
+
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    if (themeBtn) themeBtn.textContent = "☀️";
+  }
+
+  if (themeBtn) {
+    themeBtn.onclick = toggleTheme;
+  }
+});
+</script>
+</body>
+</html>

@@ -5,70 +5,117 @@
   <title>Hoteles</title>
 
   <link rel="stylesheet" href="estilos.css">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="shortcut icon" href="/img/logo.png" type="image/png">
 </head>
 
 <body>
 
-  
 <div class="top-bar">
   <nav class="nav-tabs">
-  <a href="index.html">INICIO</a>
-  <a href="lugares.html">LUGARES</a>
-  <a href="hoteles.html" class="activo">HOTELES</a>
-  <a href="guias.html">GUÍAS</a>
-</nav>
+<a href="index.html">INICIO</a>
+<a href="lugares.html">LUGARES</a>
+<a href="hoteles.html" class="activo">HOTELES</a>
+<a href="guias.html">GUÍAS</a>
+
+  </nav>
+
   <a href="login.html" class="login-btn">
-  <i class="fa-regular fa-user"></i>
-</a>
+    <i class="fa-regular fa-user"></i>
+  </a>
+  <button id="themeToggle" class="theme-btn">🌙</button>
 </div>
 
-<section class="page-header">
-  <h1>Hoteles</h1>
-  <p>Encuentra dónde hospedarte</p>
+<section class="lugares-hero">
+  <div class="lugares-overlay">
+    <span>HOSPEDAJE PREMIUM</span>
+    <h1>Hoteles</h1>
+    <p>Encuentra dónde hospedarte en Montería</p>
+  </div>
 </section>
 
 <section>
-  
   <div class="grid" id="lista-hoteles"></div>
+
   <div class="cta-guia">
-  <button class="btn-pro" onclick="mostrarFormularioReserva()">
-    Reservar hotel
-  </button>
-</div>
-<div id="formReserva" class="form-guia oculto">
+    <button class="btn-pro" onclick="mostrarFormularioReserva()">
+      Reservar hotel
+    </button>
+  </div>
 
-  <h2>Reserva tu hotel</h2>
+  <div id="formReserva" class="form-guia oculto">
+    <h2>Reserva tu hotel</h2>
 
-  <select id="hotelSeleccionado">
-    <option>Selecciona un hotel</option>
-  </select>
+    <select id="hotelSeleccionado">
+      <option>Selecciona un hotel</option>
+    </select>
 
-  <input type="text" id="nombreReserva" placeholder="Nombre completo">
-  <input type="email" id="correoReserva" placeholder="Correo">
-  <input type="text" id="telefonoReserva" placeholder="Teléfono">
-  <label class="fecha-label">Fecha de ingreso</label>
-<input type="date" id="ingreso">
+    <input type="text" id="nombreReserva" placeholder="Nombre completo">
+    <input type="email" id="correoReserva" placeholder="Correo">
+    <input type="text" id="telefonoReserva" placeholder="Teléfono">
 
-<label class="fecha-label">Fecha de salida</label>
-<input type="date" id="salida">
+    <label class="fecha-label">Fecha de ingreso</label>
+    <input type="date" id="ingreso">
 
-  <button onclick="guardarReserva()">Reservar</button>
+    <label class="fecha-label">Fecha de salida</label>
+    <input type="date" id="salida">
 
-</div>
+    <button onclick="guardarReserva()">Reservar</button>
+  </div>
 </section>
+
+<div class="modal" id="modalHotel">
+  <div class="modal-contenido">
+    <span class="cerrar" id="cerrarModalHotel">&times;</span>
+
+    <img id="hotelModalImagen" src="" alt="">
+    <h2 id="hotelModalTitulo"></h2>
+    <p id="hotelModalDescripcion"></p>
+  
+    <iframe
+      id="hotelModalMapa"
+      width="100%"
+      height="250"
+      style="border:0; border-radius:12px; margin-top:15px;"
+      loading="lazy">
+    </iframe>
+
+    <a id="hotelBtnMaps" target="_blank">
+      Ver ubicación en Google Maps
+    </a>
+  </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="supabase.js"></script>
 <script src="sesion.js"></script>
 <script src="script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const themeBtn = document.getElementById("themeToggle");
 
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    if (themeBtn) themeBtn.textContent = "☀️";
+  }
+
+  if (themeBtn) {
+    themeBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+
+      if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+        themeBtn.textContent = "☀️";
+      } else {
+        localStorage.setItem("theme", "light");
+        themeBtn.textContent = "🌙";
+      }
+    });
+  }
+});
+</script>
 </body>
 </html>

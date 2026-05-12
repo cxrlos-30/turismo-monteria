@@ -20,21 +20,26 @@
   
   <div class="top-bar">
     <nav class="nav-tabs">
-  <a href="index.html">INICIO</a>
-  <a href="lugares.html">LUGARES</a>
-  <a href="hoteles.html">HOTELES</a>
-  <a href="guias.html" class="activo">GUÍAS</a>
+<a href="index.html">INICIO</a>
+<a href="lugares.html">LUGARES</a>
+<a href="hoteles.html">HOTELES</a>
+<a href="guias.html" class="activo">GUÍAS</a>
+
 </nav>
     <a href="login.html" class="login-btn">
   <i class="fa-regular fa-user"></i>
 </a>
+<button id="themeToggle" class="theme-btn">🌙</button>
   </div>
 
   
-  <section class="page-header">
+  <section class="lugares-hero">
+  <div class="lugares-overlay">
+    <span>EXPERTOS LOCALES</span>
     <h1>Guías turísticos</h1>
-    <p>Explora con expertos locales</p>
-  </section>
+    <p>Descubre Montería acompañado por guías locales</p>
+  </div>
+</section>
 
   
   <section>
@@ -59,6 +64,9 @@
     <h4 id="modalEspecialidad"></h4>
 
     <p id="modalDescripcion"></p>
+    <a id="btnWhatsappGuia" target="_blank" class="btn-whatsapp">
+  Contactar por WhatsApp
+</a>
 
   </div>
 
@@ -68,6 +76,29 @@
 <script src="supabase.js"></script>
 <script src="sesion.js"></script>
 <script src="script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const themeBtn = document.getElementById("themeToggle");
 
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    if (themeBtn) themeBtn.textContent = "☀️";
+  }
+
+  if (themeBtn) {
+    themeBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+
+      if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+        themeBtn.textContent = "☀️";
+      } else {
+        localStorage.setItem("theme", "light");
+        themeBtn.textContent = "🌙";
+      }
+    });
+  }
+});
+</script>
 </body>
 </html>

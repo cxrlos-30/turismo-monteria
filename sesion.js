@@ -1,6 +1,5 @@
 async function verPerfil() {
-
-  const { data, error } = await window._supabase.auth.getSession();
+  const { data } = await window._supabase.auth.getSession();
 
   if (data.session) {
     window.location.href = "perfil.html";
@@ -10,7 +9,6 @@ async function verPerfil() {
 }
 
 async function cargarPerfil() {
-
   const { data } = await window._supabase.auth.getSession();
 
   if (!data.session) {
@@ -23,10 +21,9 @@ async function cargarPerfil() {
 }
 
 async function cerrarSesion() {
-
   const { error } = await window._supabase.auth.signOut();
 
-  if(error){
+  if (error) {
     alert(error.message);
     return;
   }
@@ -39,8 +36,14 @@ async function cerrarSesion() {
 
 window.addEventListener("load", async () => {
   const ruta = window.location.pathname;
+  const { data } = await window._supabase.auth.getSession();
 
   if (ruta.includes("perfil.html")) {
     await cargarPerfil();
   }
+
+  if (ruta.includes("login.html") && data.session) {
+    window.location.href = "perfil.html";
+  }
 });
+
