@@ -250,7 +250,7 @@ function mostrarGuia(guia) {
     "https://s3.ppllstatics.com/canarias7/www/multimedia/201704/14/media/cortadas/462076-1g_CSN462076_MG3928385--1248x702.jpg";
 
   document.getElementById("btnWhatsappGuia").href =
-    `https://wa.me/57${guia.telefono}`;
+ `https://wa.me/57${guia.telefono}?text=${encodeURIComponent("¡Hola " + guia.nombre + "! Vi tu perfil en Turismo Montería y me gustaría contratarte como guía. ¿Tienes disponibilidad?")}`
 
   document.getElementById("modalGuia").classList.remove("oculto");
 }
