@@ -1,107 +1,65 @@
 async function register() {
-  const email = document.getElementById("email").value.trim();
+  const email    = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value.trim();
-  const mensaje = document.getElementById("mensaje");
-  const botones = document.querySelectorAll("button");
+  const botones  = document.querySelectorAll("button");
 
-  if (!email || !password) {
-    mensaje.textContent = "Completa todos los campos";
-    return;
-  }
+  if (!email || !password) { Toast.aviso("Completa todos los campos"); return; }
 
   botones.forEach(btn => btn.disabled = true);
-  mensaje.textContent = "Registrando...";
+  Toast.info("Registrando...");
 
-  const { error } = await window._supabase.auth.signUp({
-    email,
-    password
-  });
+  const { error } = await window._supabase.auth.signUp({ email, password });
 
   botones.forEach(btn => btn.disabled = false);
 
-  if (error) {
-    mensaje.textContent = "Error: " + error.message;
-    return;
-  }
+  if (error) { Toast.error("Error: " + error.message); return; }
 
-  mensaje.textContent = "Usuario registrado correctamente";
+  Toast.exito("¡Usuario registrado correctamente!");
 }
 
 async function login() {
-  const email = document.getElementById("email").value.trim();
+  const email    = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value.trim();
-  const mensaje = document.getElementById("mensaje");
-  const botones = document.querySelectorAll("button");
+  const botones  = document.querySelectorAll("button");
 
-  if (!email || !password) {
-    mensaje.textContent = "Completa todos los campos";
-    return;
-  }
+  if (!email || !password) { Toast.aviso("Completa todos los campos"); return; }
 
   botones.forEach(btn => btn.disabled = true);
-  mensaje.textContent = "Ingresando...";
+  Toast.info("Ingresando...");
 
-  const { error } = await window._supabase.auth.signInWithPassword({
-    email,
-    password
-  });
+  const { error } = await window._supabase.auth.signInWithPassword({ email, password });
 
   botones.forEach(btn => btn.disabled = false);
 
-  if (error) {
-    mensaje.textContent = "Error: " + error.message;
-    return;
-  }
+  if (error) { Toast.error("Error: " + error.message); return; }
 
-  mensaje.textContent = "Login exitoso";
-
-  setTimeout(() => {
-    window.location.href = "index.html";
-  }, 1000);
+  Toast.exito("¡Bienvenido!");
+  setTimeout(() => { window.location.href = "index.html"; }, 1000);
 }
 
 async function resetPassword() {
   const email = document.getElementById("email").value.trim();
-  const mensaje = document.getElementById("mensaje");
 
-  if (!email) {
-    mensaje.textContent = "Ingresa tu correo primero";
-    return;
-  }
+  if (!email) { Toast.aviso("Ingresa tu correo primero"); return; }
 
   const { error } = await window._supabase.auth.resetPasswordForEmail(email, {
     redirectTo: "https://turismo-monteria.vercel.app/reset-password.html"
   });
 
-  if (error) {
-    mensaje.textContent = "Error: " + error.message;
-    return;
-  }
+  if (error) { Toast.error("Error: " + error.message); return; }
 
-  mensaje.textContent = "Correo enviado. Revisa tu bandeja principal o carpeta de spam para cambiar tu contraseña.";
+  Toast.exito("Correo enviado. Revisa tu bandeja o carpeta de spam.");
 }
 
 async function updatePassword() {
   const newPassword = document.getElementById("newPassword").value.trim();
-  const mensaje = document.getElementById("mensaje");
 
-  if (!newPassword) {
-    mensaje.textContent = "Ingresa una nueva contraseña";
-    return;
-  }
+  if (!newPassword) { Toast.aviso("Ingresa una nueva contraseña"); return; }
 
-  const { error } = await window._supabase.auth.updateUser({
-    password: newPassword
-  });
+  const { error } = await window._supabase.auth.updateUser({ password: newPassword });
 
-  if (error) {
-    mensaje.textContent = "Error: " + error.message;
-    return;
-  }
+  if (error) { Toast.error("Error: " + error.message); return; }
 
-  mensaje.textContent = "Contraseña actualizada correctamente";
-
-  setTimeout(() => {
-    window.location.href = "login.html";
-  }, 1500);
+  Toast.exito("¡Contraseña actualizada correctamente!");
+  setTimeout(() => { window.location.href = "login.html"; }, 1500);
 }
