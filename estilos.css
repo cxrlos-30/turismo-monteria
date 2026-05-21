@@ -2119,3 +2119,257 @@ body.dark-mode .favorito-btn{
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(255, 152, 0, 0.4);
 }
+
+/* ===================================================== */
+/* ===== ARREGLO DEFINITIVO DE TODAS LAS CARDS ===== */
+/* ===================================================== */
+
+/* ===== CARDS MÁS JUNTAS ===== */
+
+.cards{
+  display:grid !important;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(320px,340px)) !important;
+
+  justify-content:center !important;
+
+  gap:18px !important;
+
+  max-width:1200px !important;
+
+  margin:auto !important;
+
+  padding:30px 20px !important;
+}
+
+.cards .card{
+  width:340px !important;
+}
+
+.cards .card:hover{
+  transform:translateY(-8px) !important;
+}
+
+.cards .card::before,
+.cards .card::after{
+  display:none !important;
+}
+
+.cards .card img{
+  width:100% !important;
+
+  height:240px !important;
+
+  object-fit:cover !important;
+
+  display:block !important;
+
+  position:relative !important;
+}
+
+.cards .card h3{
+  position:static !important;
+
+  transform:none !important;
+
+  left:auto !important;
+  right:auto !important;
+  top:auto !important;
+  bottom:auto !important;
+
+  width:100% !important;
+
+  margin:0 0 14px 0 !important;
+
+  color:#222 !important;
+
+  font-size:28px !important;
+
+  text-align:center !important;
+
+  text-shadow:none !important;
+
+  z-index:auto !important;
+}
+
+.card-content{
+  position:static !important;
+
+  padding:25px !important;
+
+  display:flex !important;
+  flex-direction:column !important;
+
+  justify-content:center !important;
+  align-items:center !important;
+
+  text-align:center !important;
+
+  flex:1 !important;
+}
+
+.card-content p{
+  color:#666 !important;
+
+  line-height:1.6 !important;
+
+  font-size:16px !important;
+
+  padding:0 !important;
+
+  margin:0 !important;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width:768px){
+
+  .cards{
+    grid-template-columns:1fr !important;
+  }
+
+  .cards .card{
+    min-height:auto !important;
+  }
+
+  .cards .card img{
+    height:220px !important;
+  }
+
+  .cards .card h3{
+    font-size:24px !important;
+  }
+
+  .card-content{
+    padding:20px !important;
+  }
+}
+
+/* ===== GUIAS COMO LA PRIMERA FOTO ===== */
+
+#lista-guias,
+.guias-grid{
+  display:grid !important;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(320px,320px)) !important;
+
+  justify-content:center !important;
+
+  gap:32px !important;
+
+  padding:50px 20px !important;
+}
+
+/* CARD */
+
+.guia-card{
+  position:relative !important;
+
+  width:320px !important;
+  height:280px !important;
+
+  overflow:hidden !important;
+
+  border-radius:20px !important;
+
+  background:#111 !important;
+
+  cursor:pointer !important;
+
+  display:block !important;
+
+  box-shadow:0 12px 28px rgba(0,0,0,.16) !important;
+
+  transition:.3s ease !important;
+}
+
+.guia-card:hover{
+  transform:translateY(-6px) !important;
+}
+
+/* IMAGEN */
+
+.guia-card img{
+  width:100% !important;
+  height:100% !important;
+
+  object-fit:cover !important;
+
+  display:block !important;
+}
+
+/* DEGRADADO OSCURO */
+
+.guia-card::before{
+  content:"" !important;
+
+  position:absolute !important;
+
+  inset:0 !important;
+
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,.75),
+    rgba(0,0,0,.15)
+  ) !important;
+
+  z-index:1 !important;
+}
+
+/* TITULO ABAJO */
+
+.guia-card h3{
+  position:absolute !important;
+
+  bottom:22px !important;
+  left:50% !important;
+
+  transform:translateX(-50%) !important;
+
+  width:90% !important;
+
+  text-align:center !important;
+
+  color:white !important;
+
+  font-size:22px !important;
+
+  font-weight:700 !important;
+
+  z-index:2 !important;
+
+  margin:0 !important;
+
+  text-shadow:0 2px 8px rgba(0,0,0,.4) !important;
+}
+
+/* OCULTAR TEXTO EXTRA */
+
+.guia-card .card-content p,
+.guia-card .btn-pro,
+.guia-card h4{
+  display:none !important;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:768px){
+
+  .guia-card{
+    width:100% !important;
+    max-width:340px !important;
+
+    height:250px !important;
+  }
+
+  .guia-card h3{
+    font-size:20px !important;
+  }
+
+  #lista-guias,
+  .guias-grid{
+    grid-template-columns:1fr !important;
+  }
+}
