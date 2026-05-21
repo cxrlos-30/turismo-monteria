@@ -2373,3 +2373,329 @@ body.dark-mode .favorito-btn{
     grid-template-columns:1fr !important;
   }
 }
+
+/* ===== MODAL MÁS PEQUEÑO Y LIMPIO ===== */
+
+.modal-contenido{
+  width: 520px !important;
+  max-width: 88% !important;
+
+  padding: 18px !important;
+
+  border-radius: 22px !important;
+
+  max-height: 88vh !important;
+
+  overflow-y: auto !important;
+
+  margin-top: 20px !important;
+}
+
+/* IMAGEN */
+
+.modal-contenido img{
+  width: 100% !important;
+
+  height: 220px !important;
+
+  object-fit: cover !important;
+
+  border-radius: 16px !important;
+
+  margin-bottom: 18px !important;
+}
+
+/* TITULO */
+
+.modal-contenido h2{
+  font-size: 26px !important;
+
+  margin: 10px 0 12px !important;
+
+  line-height: 1.2 !important;
+}
+
+/* DESCRIPCION */
+
+.modal-contenido p{
+  font-size: 15px !important;
+
+  line-height: 1.7 !important;
+
+  padding: 0 10px 15px !important;
+
+  margin: 0 !important;
+}
+
+/* MAPA */
+
+.modal-contenido iframe{
+  width: 100% !important;
+
+  height: 250px !important;
+
+  border-radius: 16px !important;
+
+  margin-top: 15px !important;
+}
+
+/* BOTON CERRAR */
+
+.cerrar-modal,
+.cerrar{
+  width: 38px !important;
+  height: 38px !important;
+
+  font-size: 24px !important;
+
+  top: 10px !important;
+  right: 10px !important;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:768px){
+
+  .modal-contenido{
+    width: 92% !important;
+
+    padding: 14px !important;
+
+    max-height: 85vh !important;
+  }
+
+  .modal-contenido img{
+    height: 180px !important;
+  }
+
+  .modal-contenido iframe{
+    height: 200px !important;
+  }
+
+  .modal-contenido h2{
+    font-size: 22px !important;
+  }
+
+  .modal-contenido p{
+    font-size: 14px !important;
+  }
+}
+
+/* RESPONSIVE MODAL */
+@media (max-width: 768px) {
+
+  .modal {
+    padding: 15px;
+    overflow-y: auto;
+  }
+
+  .modal-content {
+    width: 95%;
+    max-width: 420px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 20px;
+    padding: 18px;
+  }
+
+  .modal-content img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+
+  .modal-content h2 {
+    font-size: 2rem;
+    margin: 20px 0 10px;
+    text-align: center;
+  }
+
+  .modal-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .modal-content iframe {
+    width: 100%;
+    height: 220px;
+    border-radius: 15px;
+  }
+
+  .close {
+    top: 10px;
+    right: 10px;
+    width: 38px;
+    height: 38px;
+    font-size: 22px;
+  }
+}
+
+/* ===== FIX DEFINITIVO RESPONSIVE MODAL ===== */
+
+@media screen and (max-width:768px){
+
+  .modal,
+  .modal-guia{
+    padding: 10px !important;
+
+    align-items: flex-start !important;
+
+    overflow-y: auto !important;
+  }
+
+  .modal-contenido,
+  .modal-content{
+
+    width: 95% !important;
+
+    max-width: 420px !important;
+
+    max-height: 90vh !important;
+
+    overflow-y: auto !important;
+
+    margin: 20px auto !important;
+
+    padding: 15px !important;
+
+    border-radius: 20px !important;
+  }
+
+  .modal-contenido img,
+  .modal-content img{
+
+    width: 100% !important;
+
+    height: 180px !important;
+
+    object-fit: cover !important;
+
+    border-radius: 14px !important;
+  }
+
+  .modal-contenido iframe,
+  .modal-content iframe{
+
+    width: 100% !important;
+
+    height: 200px !important;
+
+    border-radius: 14px !important;
+  }
+
+  .modal-contenido h2,
+  .modal-content h2{
+    font-size: 28px !important;
+  }
+
+  .modal-contenido p,
+  .modal-content p{
+    font-size: 15px !important;
+
+    line-height: 1.6 !important;
+  }
+
+  .cerrar-modal,
+  .close{
+
+    width: 36px !important;
+    height: 36px !important;
+
+    font-size: 22px !important;
+
+    top: 10px !important;
+    right: 10px !important;
+  }
+
+}
+
+
+
+.modal,
+.modal-guia{
+  z-index: 99999 !important;
+}
+
+/* BAJAR EL NAVBAR */
+
+nav,
+.navbar,
+header{
+  z-index: 1 !important;
+}
+
+/* ===== FIX FORMULARIO RESERVA CELULAR ===== */
+
+@media screen and (max-width:768px){
+
+  .formulario-reserva,
+  .reserva-form,
+  .form-reserva,
+  .modal-reserva{
+
+    width: 92% !important;
+
+    max-width: 360px !important;
+
+    padding: 18px !important;
+
+    margin: 10px auto !important;
+
+    border-radius: 18px !important;
+
+    max-height: 90vh !important;
+
+    overflow-y: auto !important;
+  }
+
+  .formulario-reserva h2,
+  .reserva-form h2,
+  .form-reserva h2{
+
+    font-size: 1.8rem !important;
+
+    margin-bottom: 18px !important;
+  }
+
+  .formulario-reserva input,
+  .formulario-reserva select,
+  .formulario-reserva button,
+
+  .reserva-form input,
+  .reserva-form select,
+  .reserva-form button,
+
+  .form-reserva input,
+  .form-reserva select,
+  .form-reserva button{
+
+    height: 50px !important;
+
+    font-size: 16px !important;
+
+    margin-bottom: 14px !important;
+
+    border-radius: 14px !important;
+  }
+
+  .formulario-reserva label,
+  .reserva-form label,
+  .form-reserva label{
+
+    font-size: 16px !important;
+
+    margin: 8px 0 !important;
+  }
+
+  .formulario-reserva button,
+  .reserva-form button,
+  .form-reserva button{
+
+    height: 55px !important;
+
+    font-size: 18px !important;
+  }
+
+}
